@@ -1,0 +1,52 @@
+import express from "express";
+
+const app = express();
+
+// Define que o express vai usar json
+app.use(express.json());
+
+const users = ["César", "Lidi", "Juca", "Frank"];
+
+
+
+/**
+ * LIST USERS
+ */
+app.get("/users", (request, response) => {
+  console.log("[GET users]");
+
+  const search = String(request.query.search);
+  console.log("search", search);
+
+  const filteredUsers = search
+    ? users.filter((user) => {
+        return user.includes(search);
+      })
+    : users;
+
+  response.json(filteredUsers);
+});
+
+/**
+ * GET USER
+ */
+app.get("/users/:id", (request, response) => {
+  console.log("GET:ID");
+  const id = Number(request.params.id);
+  const user = users[id];
+  response.json(user);
+});
+
+/**
+ * NEW USER
+ */
+app.post("/users", (request, response) => {
+  console.log("[POST user]");
+  console.log(request.body);
+
+  const user = { name: request.body.name, email: request.body.email };
+
+  return response.json(user);
+});
+
+app.listen(3333);
