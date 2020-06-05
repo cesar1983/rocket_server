@@ -1,6 +1,5 @@
 ## notes
 
-::
 App para cadastro de pontos de coleta de tipos específicos de lixo.
 
 - Cadastro de items
