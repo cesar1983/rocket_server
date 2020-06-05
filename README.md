@@ -12,8 +12,8 @@ App para cadastro de pontos de coleta de tipos específicos de lixo.
 - Instalar ts-node : npm install ts-node -D
 - Gera o config do typescript : npx tsc --init
 - Roda o arquivo TypeScript com o ts-node : npx ts-node src/server.ts
-- Instalar o npm install ts-node-dev -D pra ter um live reload enquanto editamos o programa
-- Pra ficar mais facil de rodar o esse comando todo, criamos uma entrada no bloco Scripts do package.json "dev": "ts-node-dev src/server.ts"
+- Instalar o "ts-node-dev"  (npm install ts-node-dev -D) pra ter um live reload enquanto editamos o programa
+- Pra ficar mais facil de rodar, criamos uma entrada no bloco Scripts do package.json "dev": "ts-node-dev src/server.ts"
 - Depois pra rodar é só : npm run dev
 
 * client restful "insomnia"
