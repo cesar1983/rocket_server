@@ -7,11 +7,8 @@ App para cadastro de pontos de coleta de tipos específicos de lixo.
 - Cadastro de pontos de coleta
 - N-N
 
-::
-
 ---
 
-- Instalar node
 - Instalar express : npm install @types/express -D ( development )
 - Instalar ts-node : npm install ts-node -D
 - Gera o config do typescript : npx tsc --init
