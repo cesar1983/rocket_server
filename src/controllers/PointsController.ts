@@ -50,6 +50,8 @@ class PointsController {
       items,
     } = request.body;
 
+    console.log(request.body);
+
     const trx = await knex.transaction();
 
     const point = {
@@ -68,12 +70,15 @@ class PointsController {
 
     const point_id = insertedId[0];
 
-    const pointItems = items.map((item_id: number) => {
-      return {
-        point_id,
-        item_id,
-      };
-    });
+    const pointItems = items
+      .split(",")
+      .map((item: string) => Number(item.trim()))
+      .map((item_id: number) => {
+        return {
+          point_id,
+          item_id,
+        };
+      });
 
     await trx("points_items").insert(pointItems);
 

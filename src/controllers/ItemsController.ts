@@ -8,7 +8,8 @@ class ItemsController {
     const serializedItems = items.map((item) => {
       return {
         ...item,
-        imagePath: `http://localhost:3333/uploads/${item.image}`,
+        // imagePath: `http://localhost:3333/uploads/${item.image}`,
+        imagePath: `http://192.168.0.27:3333/uploads/${item.image}`,
       };
     });
 
